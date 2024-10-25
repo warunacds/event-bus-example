@@ -11,7 +11,6 @@ import { EventBus } from './EventBus';
 
 // };
 const message = EventBus.subscribe('message');
-const { person } = toRefs(message);
 
 // EventBus.publish('message', message.value);
 
@@ -25,10 +24,10 @@ const unsubscribe = () => {
 <template>
   <div style="display: flex; flex-direction: column; row-gap: 20px;">
     <p>Component First</p>
-    <button @click="subscribe">Subscribe</button>
+    <!-- <button @click="subscribe">Subscribe</button> -->
     <button @click="unsubscribe">Unsubscribe</button>
     <div v-if="message">
-      <p>{{ person }}</p>
+      <p>{{ message }}</p>
 
     </div>
   </div>
